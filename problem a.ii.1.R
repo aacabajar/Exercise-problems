@@ -1,6 +1,7 @@
 library(data.table)
 library(ggplot2)
-permute <- function(vec){
+
+permute <- function(vec){ #permuting function
   combn.win = expand.grid(1:2, 1:(length(vec)/2))
   smp = sample(vec, length(vec))
   mat_n  = t(matrix(smp, nrow=2, ncol=length(vec)/2))
@@ -38,3 +39,5 @@ dat_tbl <- rbind(dat_tbl, as.data.frame(table(outcome)))
 dat_tbl <- as.data.table(dat_tbl)
 ggplot(dat_tbl, aes(Freq, color=outcome)) +
   geom_density()
+
+
