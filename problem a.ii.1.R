@@ -1,4 +1,4 @@
-library(data.table)
+library(data.tableaqw)
 library(ggplot2)
 
 permute <- function(vec){ #permuting function
